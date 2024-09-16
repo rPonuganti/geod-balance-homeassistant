@@ -1,0 +1,7 @@
+{
+  "name": "GEOD Balance",
+  "render_readme": true,
+  "domains": ["sensor"],
+  "iot_class": "cloud_polling",
+  "homeassistant": "2023.3.0"
+}

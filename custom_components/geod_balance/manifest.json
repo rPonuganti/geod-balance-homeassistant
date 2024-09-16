@@ -1,0 +1,11 @@
+{
+    "domain": "geod_balance",
+    "name": "GEOD Balance",
+    "version": "1.0.0",
+    "documentation": "https://github.com/erikarenhill/geod-balance-homeassistant",
+    "dependencies": [],
+    "codeowners": ["@erikarenhill"],
+    "requirements": [],
+    "config_flow": true
+  }
+  
