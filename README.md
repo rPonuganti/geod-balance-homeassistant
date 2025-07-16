@@ -2,6 +2,10 @@
 
 This custom integration for Home Assistant allows you to monitor the GEOD token balance of a Polygon wallet address using the Polygonscan API.
 
+## About this fork
+This is a fork of the original project to fix an issue that wasn't addressed due to inactivity. 
+I’ve made the necessary changes for my use case and will try to maintain this fork as needed. Thanks to the original author for their great work!
+
 ## Features
 
 - Fetches GEOD token balance for a specified Polygon wallet address
