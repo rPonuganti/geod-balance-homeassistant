@@ -7,6 +7,7 @@ from homeassistant.helpers.entity import Entity
 from homeassistant.const import STATE_UNKNOWN
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from homeassistant.helpers.aiohttp_client import async_get_clientsession
 
 from .const import (
     DOMAIN,
@@ -58,7 +59,8 @@ class GeodBalanceDataUpdateCoordinator(DataUpdateCoordinator):
         }
 
         try:
-            async with self.hass.helpers.aiohttp_client.async_get_clientsession().get(POLYGONSCAN_API_URL, params=params) as response:
+            session = async_get_clientsession(self.hass)
+            async with session.get(POLYGONSCAN_API_URL, params=params, timeout=10) as response:
                 if response.status != 200:
                     raise UpdateFailed(f"Error fetching data: HTTP {response.status}")
                 data = await response.json()

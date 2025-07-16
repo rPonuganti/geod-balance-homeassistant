@@ -2,10 +2,11 @@
     "domain": "geod_balance",
     "name": "GEOD Balance",
     "version": "1.0.0",
-    "documentation": "https://github.com/erikarenhill/geod-balance-homeassistant",
+    "documentation": "https://github.com/rPonuganti/geod-balance-hass",
     "dependencies": [],
-    "codeowners": ["@erikarenhill"],
+    "codeowners": ["@rPonuganti"],
     "requirements": [],
+    "iot_class": "cloud_polling",
     "config_flow": true
   }
   

@@ -7,6 +7,8 @@ import voluptuous as vol
 from homeassistant import config_entries
 from homeassistant.const import CONF_API_KEY, CONF_NAME
 from homeassistant.core import callback
+from homeassistant.helpers.aiohttp_client import async_get_clientsession
+
 
 from .const import DOMAIN, CONF_WALLET_ADDRESS, CONF_NICKNAME, POLYGONSCAN_API_URL, GEOD_CONTRACT_ADDRESS
 
@@ -74,7 +76,7 @@ class GeodBalanceConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         }
 
         try:
-            session = self.hass.helpers.aiohttp_client.async_get_clientsession()
+            session = async_get_clientsession(self.hass)
             async with session.get(POLYGONSCAN_API_URL, params=params, timeout=10) as response:
                 data = await response.json()
 
